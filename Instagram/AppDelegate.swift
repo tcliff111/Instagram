@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if PFUser.currentUser() != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-            let vc = storyboard.instantiateViewControllerWithIdentifier("HomeViewController")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("TabViewController")
             window?.rootViewController = vc
         }
         

@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
                 print(error.localizedDescription)
             } else {
                 print("User logged in successfully")
+                self.performSegueWithIdentifier("Login", sender: sender)
             }
         }
     }
@@ -49,6 +50,7 @@ class LoginViewController: UIViewController {
         user.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if success {
                 print("success")
+                self.performSegueWithIdentifier("Login", sender: sender)
             }
             else {
                 print("you suck bitch")
