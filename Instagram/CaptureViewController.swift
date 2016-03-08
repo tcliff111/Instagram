@@ -46,10 +46,15 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
             Post.postUserImage(preparedImage, withCaption: caption, withCompletion: { (success: Bool, failure: NSError?) -> Void in
                 if success {
                     print("success")
+                    self.captionLabel.text = ""
+                    self.defaultView.hidden = false
+                    self.defaultLabel.hidden = false
+                    self.tabBarController?.selectedIndex = 0
                 }
             })
         }
     }
+  
     
     func onUpload(sender: UITapGestureRecognizer) {
         let vc = UIImagePickerController()

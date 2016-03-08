@@ -23,21 +23,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.estimatedRowHeight = 100;
-        tableView.rowHeight = 350;
-        
-        query.orderByDescending("createdAt")
-        query.includeKey("author")
-        query.limit = 20
-        
-        query.findObjectsInBackgroundWithBlock { (posts: [PFObject]?, error: NSError?) -> Void in
-            if let posts = posts {
-                self.dictionary = posts
-                self.tableView.reloadData()
-            } else {
-                print(error?.localizedDescription)
-            }
-        }
+        tableView.estimatedRowHeight = 300;
+        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.rowHeight = 350;
         
     }
 
@@ -59,24 +47,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homeCell", forIndexPath: indexPath) as! HomeTableViewCell
         cell.captionView.text = dictionary![indexPath.row]["caption"] as? String
-//        cell.pictureView.image = dictionary![indexPath.row]["media"] as? UIImage
         cell.pictureView.file = dictionary![indexPath.row]["media"] as? PFFile
         cell.pictureView.loadInBackground()
         return cell
     }
-//    
-//    override func viewDidAppear(animated: Bool) {
-//        super.viewDidAppear(animated)
-//    
-//        query.findObjectsInBackgroundWithBlock { (posts: [PFObject]?, error: NSError?) -> Void in
-//            if let posts = posts {
-//                self.dictionary = posts
-//                self.tableView.reloadData()
-//            } else {
-//                print(error?.localizedDescription)
-//            }
-//        }
-//    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        query.orderByDescending("createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        query.findObjectsInBackgroundWithBlock { (posts: [PFObject]?, error: NSError?) -> Void in
+            if let posts = posts {
+                self.dictionary = posts
+                self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
