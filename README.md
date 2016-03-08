@@ -38,6 +38,10 @@ Here's a walkthrough of implemented user stories:
 
 <a href="http://imgur.com/9VhTLaI"><img src="http://i.imgur.com/9VhTLaI.gif" title="source: imgur.com" /></a>
 
+This demonstarates user persistence:
+
+<a href="http://imgur.com/NwvSFht"><img src="http://i.imgur.com/NwvSFht.gif" title="source: imgur.com" /></a>
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
