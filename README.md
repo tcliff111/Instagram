@@ -44,6 +44,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
+The main difficult was figuring out how to use Parses objects and functions.
+
 ## License
 
     Copyright [2016] [Thomas Clifford]
