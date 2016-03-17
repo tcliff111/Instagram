@@ -25,7 +25,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.estimatedRowHeight = 300;
         tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.rowHeight = 350;
         
     }
 

@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
                 self.performSegueWithIdentifier("Login", sender: sender)
             }
             else {
-                print("you suck bitch")
+                
             }
         }
     }
